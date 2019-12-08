@@ -1303,7 +1303,7 @@ yyreduce:
     {
         case 2:
 #line 15 "calc.y"
-    { printf("%d\n", (yyvsp[(2) - (3)]));}
+    { printf("%d\n", (yyvsp[(2) - (3)])); ;}
     break;
 
   case 4:
