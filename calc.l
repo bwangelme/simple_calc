@@ -17,7 +17,17 @@
 }
 
 	/* 运算符 */
-[-+()=/*\n]    {return *yytext;}
+[-+] {
+    yylval = *yytext;
+    return OP1;
+}
+[*/] {
+    yylval = *yytext;
+    return OP2;
+}
+
+	/* 运算符 */
+[()=\n]    {return *yytext;}
 
 	/* 空白被忽略 */
 [ \t]    ;

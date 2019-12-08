@@ -1,6 +1,4 @@
-%token   INTEGER
-%left    '+' '-'
-%left    '*' '/'
+%token   INTEGER OP1 OP2
 
 %{
     #include <stdio.h>
@@ -16,11 +14,29 @@ program:
     |
     ;
 expr:
-    expr '+' term { $$ = $1 + $3; }
+    expr OP1 term {
+        switch($2) {
+        case '+':
+            $$ = $1 + $3;
+            break;
+        case '-':
+            $$ = $1 - $3;
+            break;
+        }
+    }
     | term
     ;
 term:
-    term '*' factor { $$ = $1 * $3; }
+    term OP2 factor {
+        switch($2) {
+        case '*':
+            $$ = $1 * $3;
+            break;
+        case '/':
+            $$ = $1 / $3;
+            break;
+        }
+    }
     | factor
     ;
 factor:

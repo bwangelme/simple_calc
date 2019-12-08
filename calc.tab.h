@@ -39,11 +39,15 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     INTEGER = 258
+     INTEGER = 258,
+     OP1 = 259,
+     OP2 = 260
    };
 #endif
 /* Tokens.  */
 #define INTEGER 258
+#define OP1 259
+#define OP2 260
 
 
 
