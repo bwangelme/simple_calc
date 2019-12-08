@@ -3,18 +3,18 @@
 
 ## 说明
 
-这是一个支持加法，乘法，括号的简单计算器
+这是一个基于整数的，支持加减乘除，括号的简单计算器
 
 ## 文法
 
 ```
 Program -> Program Expr '\n'|空集合
-Expr -> Expr + Term | Factor
-Term -> Term * Factor | F
+Expr -> Expr OP1 Term | Factor
+Term -> Term OP2 Factor | F
 Factor -> ( Expr ) | INTEGER
 ```
 
-其中 Program 是开始符号，INTEGER 是终结符号，其余的都是非终结符号。
+其中 Program 是开始符号，INTEGER, OP1(`+`, `-`), OP2(`*`, `/`) 是终结符号，其余的都是非终结符号。
 
 ## 在 Mac 下编译并执行
 
