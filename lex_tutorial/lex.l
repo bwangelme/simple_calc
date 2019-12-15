@@ -29,11 +29,11 @@ do          { return(DO); }
 else        { return(ELSE); }
 {id}        { return(ID); }
 {number}    { return(NUMBER); }
+"<"         { return(RELOP); }
 "<="        { return(RELOP); }
 "<>"        { return(RELOP); }
-"<"         { return(RELOP); }
-">="        { return(RELOP); }
 ">"         { return(RELOP); }
+">="        { return(RELOP); }
 "="         { return(RELOP); }
 
 %%
